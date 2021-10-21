@@ -7,13 +7,13 @@
     <title>Blog create</title>
 </head>
 <body>
-    <h1>Blog create</h1>
-    <h2>Write Post Page</h2>
-    <form action="/blog/create/" method="POST" id="create">
+    <h1>Blog edit</h1>
+    <h2>Edit Post Page</h2>
+    <form action="/blog/post-edit/{{ post.id }}/" id="blog-edit", method="POST">
         {% csrf_token %}
-        Title: <input type="text" name="title"/>
+        Title: <input type="text" name="title" value="{{ post.title }}"/>
         <input type="submit" />
     </form>
-    <textarea name="content" form="create"> Enter Content</textarea>
+    <textarea name="content" form="blog-edit"> {{ post.content }}</textarea>
 </body>
 </html>

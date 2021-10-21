@@ -7,6 +7,12 @@
     <title>Blog Home</title>
 </head>
 <body>
+    <p>
+        <span class="link"><a href="{% url 'landing:home' %}">Home</a></span>
+        <span class="link"><a href="{% url 'blog:home' %}">Blog</a></span>
+        <span class="link"><a href="{% url 'shop:home' %}">Shops</a></span>
+        <span class="link"><a href="{% url 'local:home' %}">Find Shops</a></span>
+    </p>
     <h1>Blog home</h1>
     {% if post_list %}
     <ol>
@@ -17,6 +23,7 @@
     {% else %}
     <h4>No post</h4>
     {% endif %}
+    <p>Total Posts: {{ post_list|length }}</p>
     <a href="/blog/create/">Write Post</a>
 </body>
 </html>

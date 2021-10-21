@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "blog",
     "shopping",
     "payment",
-    "local"
+    "local",
+    "base",
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,9 @@ ROOT_URLCONF = 'django_demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            "./base_templates"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

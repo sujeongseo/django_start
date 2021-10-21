@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>Blog create</h1>
+    <h2>Write Post Page</h2>
+    <form action="/blog/create/" method="POST" id="create">
+        {% csrf_token %}
+        Title: <input type="text" name="title"/>
+        <input type="submit" />
+    </form>
+    <textarea name="content" form="create"> Enter Content</textarea>
 </body>
 </html>

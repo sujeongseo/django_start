@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ post.title }}</title>
+    <title> {{ post.title }} - Delete </title>
 </head>
 <body>
     <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
-    <a href="/blog/post-edit/{{ post.id }}">edit</a>
+    <form action="/blog/post-delete/{{ post.id }}/" method="post">
+        {% csrf_token %}
+        <h3>Are you sure?</h3>
+        <input type="submit"/>
+    </form>
 </body>
 </html>
